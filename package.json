@@ -20,6 +20,7 @@
   "homepage": "https://github.com/shoutatani/react-typescript-base#readme",
   "devDependencies": {
     "@types/react": "^16.9.17",
+    "@types/react-autosuggest": "^9.3.13",
     "@types/react-dom": "^16.9.4",
     "autoprefixer": "^9.7.4",
     "clean-webpack-plugin": "^3.0.0",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "react": "^16.12.0",
+    "react-autosuggest": "^9.4.3",
     "react-dom": "^16.12.0"
   }
 }

@@ -1,11 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
-
 import "./assets/styles/application.scss";
+import {Example} from "./components/AutoSuggestionExample/AutoSuggestionExample";
 
 ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React" />,
-  document.getElementById("example")
+  <Example ></Example>,
+  document.getElementById("entryPoint")
 );
