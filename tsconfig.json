@@ -8,6 +8,8 @@
         "lib": [
             "ES2019",
             "DOM"
-        ]
+        ],
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
     }
 }

@@ -2,9 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import "./assets/styles/application.scss";
-import {Example} from "./components/AutoSuggestionExample/AutoSuggestionExample";
+import {App} from "./components/App";
 
 ReactDOM.render(
-  <Example ></Example>,
+  <App ></App>,
   document.getElementById("entryPoint")
 );
