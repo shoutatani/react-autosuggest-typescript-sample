@@ -7,6 +7,7 @@ import * as data from "../../assets/geo_data/geo_data.json";
 
 interface TownProps {
   onSuggestionClicked({}: {latitude: number, longitude: number}): void;
+  onSuggestionAreaCleared(): void;
 }
 
 interface TownState {
@@ -51,6 +52,9 @@ export class TownNameAutoSuggest extends React.Component<
   }
 
   onChange = (event: React.MouseEvent, { newValue }: { newValue: string }) => {
+    if(!newValue) {
+      this.props.onSuggestionAreaCleared();
+    }
     this.setState({
       value: newValue
     });

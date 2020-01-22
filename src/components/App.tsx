@@ -9,10 +9,22 @@ interface LatLng {
 }
 
 export const App = () => {
-  const [latlng, setLatLng] = useState<LatLng>({ latitude: 0, longitude: 0 });
+  const [latlng, setLatLng] = useState("");
 
   const onSuggestionClicked = ({ latitude, longitude }: LatLng) => {
-    setLatLng({ latitude: latitude, longitude: longitude });
+    setLatLng(`${latitude.toString()}, ${longitude.toString()}`);
+  };
+
+  const onLatLngChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const latLngElement = e.target;
+    if (latLngElement.value == "") {
+
+    }
+    setLatLng(latLngElement.value);
+  };
+
+  const onSuggestionAreaCleared = () => {
+    setLatLng("");
   };
 
   return (
@@ -20,15 +32,12 @@ export const App = () => {
       <input
         type="text"
         className={"lat-lng"}
-        value={
-          latlng && latlng.latitude != 0 && latlng.longitude != 0
-            ? `${latlng.latitude}, ${latlng.longitude}`
-            : ""
-        }
-        readOnly
+        value={latlng}
+        onChange={onLatLngChanged}
       ></input>
       <TownNameAutoSuggest
         onSuggestionClicked={onSuggestionClicked}
+        onSuggestionAreaCleared={onSuggestionAreaCleared}
       ></TownNameAutoSuggest>
     </div>
   );
